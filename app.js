@@ -1,5 +1,8 @@
 import promptSync from "prompt-sync"
-import frutaDB from "./frutaDB.js"
+
+import frutaDB from "./database/frutaDB.js"
+import apresentacaoService from "./services/apresentacaoService.js"
+import operacaoService from "./services/operacaoService.js"
 
 const prompt = promptSync()
 
@@ -9,9 +12,8 @@ let tamFruta = frutaActual.length
 
 const lacunaFruta = [tamFruta]
 
-for(let i = 0; i < tamFruta; i++){
-    lacunaFruta[i] = "_"
-}
+// inicialização das lacunas
+operacaoService.inicializacaoArrayLacunas(lacunaFruta, tamFruta)
 
 let vidas = 6
 let erros = 0
@@ -46,15 +48,8 @@ while( vidas || !(letra === 0) ){
 
         // verificar se vetor está preenchido
         if(!lacunaFruta.includes("_")){
-
-            console.clear()
-            console.log("------------------------------------")
-            console.log(`    VOCÊ ACERTOU: ${frutaActual}    `)
-            console.log("------------------------------------")
-            console.log("vidas: " + vidas + " erros: " + erros)
-            console.log("------------------------------------")
-            console.log(lacunaFruta)
-            
+            apresentacaoService.apresentarPlacar(vidas, erros, frutaActual)
+            apresentacaoService.apresentarLacunas(lacunaFruta)
             break
         }
 

@@ -1,16 +1,18 @@
 const apresentacaoService = {
 
-    apresentarPlacar: (placarVidas, placarErros, frutaActual) => {
+    apresentarPlacar: (placarVidas, placarErros, palavraActual) => {
             console.clear()
             console.log("------------------------------------------------")
-            console.log(`           VOCÊ ACERTOU: ${frutaActual}         `)
+            console.log(`           VOCÊ ACERTOU: ${palavraActual}       `)
             console.log("------------------------------------------------")
             console.log("vidas: " + placarVidas + " erros: " + placarErros)
             console.log("------------------------------------------------")
     },
 
     apresentarLacunas: (arrayLacuna) => {
-        console.log(lacunaFruta)
+        let palavra = ""
+        palavra = arrayLacuna.join(' ')
+        console.log(palavra)
     }
 
     

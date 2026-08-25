@@ -13,9 +13,11 @@ const apresentacaoService = {
         let palavra = ""
         palavra = arrayLacuna.join(' ')
         console.log(palavra)
-    }
+    }, 
 
-    
+    apresentarBoneco: (arrayBoneco) => {
+        console.log(arrayBoneco.join('\n'))
+    }
 
 }
 

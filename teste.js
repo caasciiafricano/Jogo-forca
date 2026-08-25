@@ -1,4 +1,9 @@
-const array = ['a',"b","c","d"]
-let palavra = array.join('')
+const pessoa = {nome: "Carlos", idade: 10}
 
-console.log(palavra)
+const pessoaEditada = {
+    nome: "Carlos Avelino",
+    idade: "23"
+}
+
+const resultado = {...pessoa, ...pessoaEditada}
+console.log(resultado)
